@@ -2,5 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: rgb(122, 120, 120);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: #fff url('../img/main-bg.jpg') center center/cover no-repeat;
 }
