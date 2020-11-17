@@ -211,7 +211,7 @@ span {
     border-radius: 5px;
     color: var(--text-color);
     background-color: var(--icon-bg-color);
-    transition: all .15s linear;
+    transition: color .15s linear, background-color .15s linear;
 }
 
 .popup-menu-btn:hover {
