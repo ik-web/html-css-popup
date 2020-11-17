@@ -116,8 +116,7 @@ label {
 #popup-btn_more,
 #popup {
     position: absolute;
-    width: 0;
-    height: 0;
+    top: -9999px;
 }
 
 .popup-menu {
