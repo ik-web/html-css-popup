@@ -1,11 +1,105 @@
+/* Common styles
+-------------------- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    outline: none;
+    font-family: sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
+ul li {
+    position: relative;
+    list-style: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+/* Variables
+-------------------- */
+:root {
+    --icon-color: #858383;
+    --icon-bg-color: #cfcccc;
+    --icon-border-color:  #858383;
+    --popup-menu-bg-color:#cfcccc;
+}
+
+/* Body container
+-------------------- */
 body {
     width: 100vw;
     height: 100vh;
+
+    font-size: 18px;
     background: #fff url('../img/main-bg.jpg') center center/cover no-repeat;
+}
+
+/* Nav container
+-------------------- */
+.nav {
+    padding: 10px 50px 10px 0;
+}
+
+.nav-inner {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav-item {
+    display: block;
+    margin: 0 10px;
+    padding: 5px;
+    color: var(--icon-color);
+}
+
+/* Nav links
+-------------------- */
+.nav-link:after {
+    content:'';
+    display: block;
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--icon-color);
+
+    transition: width .15s linear;
+}
+
+.nav-link:focus:after,
+.nav-link:hover:after {
+    width: 70%;
+}
+
+/* Nav icons
+-------------------- */
+.nav-icon img {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.nav-icon .nav-user {
+    width: 40px;
+    height: 40px;
+} 
+
+.nav-icon {
+    border-radius: 100%;
+}
+
+.nav-icon:focus,
+.nav-icon:hover {
+    background-color:var(--icon-bg-color);
 }
