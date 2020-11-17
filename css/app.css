@@ -31,7 +31,7 @@ img {
     --icon-border-color:  #858383;
     --btn-border-color: #ffffff;
     --btn-hover-color: #858383;
-    --menu-bg-color:#ddd9d9;
+    --menu-bg-color:#cfcccc;
 }
 
 /* Body container
@@ -95,6 +95,7 @@ body {
 label {
     cursor: pointer;
 }
+
 .nav-icon .nav-user {
     width: 40px;
     height: 40px;
@@ -129,8 +130,9 @@ label {
     flex-wrap: wrap;
     justify-content: center;
     width: 250px;
-    height: 300px;
-    padding: 0 10px;
+    height: auto;
+
+    overflow-x: hidden;
 
     border-radius: 5px;
     background-color:var(--menu-bg-color);
@@ -157,6 +159,7 @@ label {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 10px;
     align-items: center;
     width: 70px;
     height: 70px;
@@ -169,7 +172,7 @@ label {
 
 .popup-menu-item:focus,
 .popup-menu-item:hover {
-    border: 1px dashed var(--icon-border-color);
+    border: 2px dashed var(--icon-border-color);
 }
 
 span {
@@ -181,6 +184,7 @@ span {
 
 /* Change icons' size 
 ------------------------- */
+#videos,
 #chat,
 #contacts,
 #classroom,
@@ -193,14 +197,15 @@ span {
     padding: 0 5px;
 }
 
-/* Popup button for more
+/* Popup button
 ------------------------- */
-.popup-menu .btn_size {
-    width: 100%;
+.popup-menu .btn {
+    width: 95%;
 }
 
-.popup-btn_more {
+.popup-menu-btn {
     text-align: center;
+    margin: 10px 0;
     width: 100%;
     border: 2px solid var(--btn-border-color);
     border-radius: 5px;
@@ -209,12 +214,41 @@ span {
     transition: all .15s linear;
 }
 
-.popup-btn_more:hover {
+.popup-menu-btn:hover {
     background-color: var(--btn-hover-color);
     color: var( --text-hover-color);
 }
 
 #popup-btn_more:focus ~ label {
+    background-color: var(--btn-hover-color);
+    color: var( --text-hover-color);
+}
+
+/* Popup menu_more container
+------------------------- */
+.popup-menu_more {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 50%;
+    transform: translateX(50%);
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 250px;
+    padding: 0 10px;
+
+    border-radius: 5px;
+    background-color:var(--menu-bg-color);
+}
+
+#popup-btn_more:checked ~ .popup-menu_more {
+    display: flex;
+}
+
+/* Popup button Kottans
+------------------------- */
+.popup-menu-btn:focus {
     background-color: var(--btn-hover-color);
     color: var( --text-hover-color);
 }
