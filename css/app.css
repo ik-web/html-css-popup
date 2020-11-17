@@ -187,16 +187,16 @@ span {
 
 /* Change icons' size 
 ------------------------- */
-#videos,
-#chat,
-#contacts,
-#classroom,
-#mail,
-#files {
+.videos,
+.chat,
+.contacts,
+.classroom,
+.mail,
+.files {
     padding: 5px 0;
 }
 
-#documents {
+.documents {
     padding: 0 5px;
 }
 
