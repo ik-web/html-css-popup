@@ -170,9 +170,12 @@ label {
     height: 40px;
 }
 
-.popup-menu-item:focus,
-.popup-menu-item:hover {
+.popup-menu-item:focus {
     border: 2px dashed var(--icon-border-color);
+}
+
+.popup-menu-item:hover {
+    border: 1px dashed var(--icon-border-color);
 }
 
 span {
