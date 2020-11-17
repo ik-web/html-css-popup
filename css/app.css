@@ -1,5 +1,5 @@
 /* Common styles
--------------------- */
+------------------------- */
 * {
     margin: 0;
     padding: 0;
@@ -23,16 +23,19 @@ img {
 }
 
 /* Variables
--------------------- */
+------------------------- */
 :root {
-    --icon-color: #858383;
+    --text-color: #616161;
+    --text-hover-color: #ffffff;
     --icon-bg-color: #cfcccc;
     --icon-border-color:  #858383;
-    --popup-menu-bg-color:#cfcccc;
+    --btn-border-color: #ffffff;
+    --btn-hover-color: #858383;
+    --menu-bg-color:#ddd9d9;
 }
 
 /* Body container
--------------------- */
+------------------------- */
 body {
     width: 100vw;
     height: 100vh;
@@ -42,7 +45,7 @@ body {
 }
 
 /* Nav container
--------------------- */
+------------------------- */
 .nav {
     padding: 10px 50px 10px 0;
 }
@@ -57,11 +60,11 @@ body {
     display: block;
     margin: 0 10px;
     padding: 5px;
-    color: var(--icon-color);
+    color: var(--text-color);
 }
 
 /* Nav links
--------------------- */
+------------------------- */
 .nav-link:after {
     content:'';
     display: block;
@@ -71,7 +74,7 @@ body {
     transform: translateX(-50%);
     width: 0;
     height: 2px;
-    background-color: var(--icon-color);
+    background-color: var(--text-color);
 
     transition: width .15s linear;
 }
@@ -82,14 +85,16 @@ body {
 }
 
 /* Nav icons
--------------------- */
+------------------------- */
 .nav-icon img {
     width: 30px;
     height: 30px;
     border-radius: 100%;
-    cursor: pointer;
 }
 
+label {
+    cursor: pointer;
+}
 .nav-icon .nav-user {
     width: 40px;
     height: 40px;
@@ -97,9 +102,119 @@ body {
 
 .nav-icon {
     border-radius: 100%;
+    transition: background-color .15s linear;
 }
 
 .nav-icon:focus,
 .nav-icon:hover {
     background-color:var(--icon-bg-color);
+}
+
+/* Popup menu container
+------------------------- */
+#popup-btn_more,
+#popup {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.popup-menu {
+    display: block;
+    position: absolute;
+    top: 50px;
+    right: 50%;
+    transform: translateX(50%);
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 250px;
+    height: 300px;
+    padding: 0 10px;
+
+    border-radius: 5px;
+    background-color:var(--menu-bg-color);
+}
+
+#popup:focus ~ label {
+    background-color:var(--icon-bg-color);
+}
+
+#popup:checked ~ .popup-menu {
+    display: flex;
+}
+
+/* Popup items
+------------------------- */
+.popup-menu li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33.333333%;
+}
+
+.popup-menu-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+}
+
+.popup-menu-item img {
+    width: 40px;
+    height: 40px;
+}
+
+.popup-menu-item:focus,
+.popup-menu-item:hover {
+    border: 1px dashed var(--icon-border-color);
+}
+
+span {
+    margin-top: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+/* Change icons' size 
+------------------------- */
+#chat,
+#contacts,
+#classroom,
+#mail,
+#files {
+    padding: 5px 0;
+}
+
+#documents {
+    padding: 0 5px;
+}
+
+/* Popup button for more
+------------------------- */
+.popup-menu .btn_size {
+    width: 100%;
+}
+
+.popup-btn_more {
+    text-align: center;
+    width: 100%;
+    border: 2px solid var(--btn-border-color);
+    border-radius: 5px;
+    color: var(--text-color);
+    background-color: var(--icon-bg-color);
+    transition: all .15s linear;
+}
+
+.popup-btn_more:hover {
+    background-color: var(--btn-hover-color);
+    color: var( --text-hover-color);
+}
+
+#popup-btn_more:focus ~ label {
+    background-color: var(--btn-hover-color);
+    color: var( --text-hover-color);
 }
